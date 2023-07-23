@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Suppries!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <style>
+        /* Thêm các style tùy chọn cho tấm thiệp */
+        body {
+            text-align: center;
+            margin-top: 100px;
+            background-color: aquamarine;
+            display: flex;
+            justify-content: center;
+        }
+        #card {
+        cursor: pointer; /* Biểu tượng con trỏ khi di chuột vào tấm thiệp */
+        aspect-ratio: 3/2; 
+        width: 400px; /* Chiều rộng của tấm thiệp */
+        height: 300px; /* Chiều cao của tấm thiệp */
+        background-image: url('giphy.gif'); /* Thay 'giphy.gif' bằng đường dẫn đến hình ảnh thiệp của bạn */
+        background-size: cover; /* Hiển thị hình ảnh toàn màn hình */
+        border: 2px solid #ccc; /* Viền xung quanh tấm thiệp */
+        border-radius: 10px; /* Bo tròn góc tấm thiệp */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng cho tấm thiệp */
+        transition: transform 0.3s ease; /* Hiệu ứng transform khi hover vào tấm thiệp */
+    }
+    #message {
+            display: none;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+@media (max-width: 375px) {
+    body {
+        margin-top: 50px; /* Điều chỉnh khoảng cách giữa top và tấm thiệp */
+    }
+    #card {
+        width: 80vw;
+    }
+    #message {
+        width: 70vw;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div id="card" onclick="toggleMessage()"></div>
+    <div id="message">
+        <p>I wish I could hug you rightnow</p>
+        <p>but I can not</p>
+        <p>so I sent you this :></p>
+        <p>llull yu</p>
+    </div>
+
+    <script>
+        function toggleMessage() {
+            var messageDiv = document.getElementById("message");
+            var cardDiv = document.getElementById("card");
+            if (messageDiv.style.display === "none") {
+                messageDiv.style.display = "block";
+                cardDiv.style.opacity = "0.5"; /* Đặt độ mờ của ảnh thành 0 */
+            } else {
+                messageDiv.style.display = "none";
+                cardDiv.style.opacity = "1"; /* Đặt độ mờ của ảnh thành 1 */
+            }
+        }
+    </script>
+</body>
+
+</html>
